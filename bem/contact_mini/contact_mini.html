@@ -1,0 +1,56 @@
+{strip}
+<div id="contact_mini" class="b-contact_mini b-theme__block">
+    <div class="container">
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.contact_mini__title|replace:'[':'<span class="text-primary">'|replace:']':'</span>'}</div>
+
+        {if !empty($theme_settings.contact_mini__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.contact_mini__description}</div>
+        {/if}
+
+        <div class="row text-center justify-content-center">
+            {if !empty($theme_settings.contact_mini__email)}
+                <div class="col-12 col-md-4 b-contact_mini__item">
+                    <span class="material-icons-outlined text-primary">email</span>
+                    <div class="text-muted">Email</div>
+                    {eval var=$theme_settings.contact_mini__email assign='contact_mini__email'}
+                    <a href="mailto:{$contact_mini__email|escape}">{$contact_mini__email}</a>
+                </div>
+            {/if}
+
+            {if !empty($theme_settings.contact_mini__phone)}
+                <div class="col-12 col-md-4 b-contact_mini__item">
+                    <span class="material-icons-outlined text-primary">phone</span>
+                    <div class="text-muted">[`Телефон`]</div>
+                    {eval var=$theme_settings.contact_mini__phone assign='contact_mini__phone'}
+                    {$_phone = explode("\n", $contact_mini__phone)}
+                    {foreach $_phone as $_footer__phone}
+                        {$_footer__phone = $_footer__phone|trim}
+                        {if !empty($_footer__phone)}
+                            <div class="mb-2">
+                                {* проверяем нет ли уже ссылки в телефоне *}
+                                {if stripos($_footer__phone, '<a ') !== false}
+                                    {$_footer__phone}
+                                {else}
+                                    <a href="tel:+{$_footer__phone|regex_replace:'/[^0-9]+/':''}">{$_footer__phone}</a>
+                                {/if}
+                            </div>
+                        {/if}
+                    {/foreach}
+                </div>
+            {/if}
+
+            {if !empty($theme_settings.contact_mini__address)}
+                <div class="col-12 col-md-4 b-contact_mini__item">
+                    <span class="material-icons-outlined text-primary">location_on</span>
+                    <div class="text-muted">[`Адрес`]</div>
+                    <div class="b-contact_mini__link">
+                        {eval var=$theme_settings.contact_mini__address}
+                    </div>
+                </div>
+            {/if}
+
+        </div>
+
+    </div>
+</div>
+{/strip}

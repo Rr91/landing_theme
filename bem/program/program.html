@@ -1,0 +1,32 @@
+{strip}
+
+    {if !empty($theme_settings.program__bg)}
+        {$bg = "{$wa_theme_url}{$theme_settings.program__bg}"}
+    {/if}
+    <div id="program" class="b-theme__block b-theme__block--dark" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+        <div class="container">
+            <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.program__title}</div>
+            <div class="mt-5 pt-5">
+               {if !empty($files)}
+                {$i=0}
+                {foreach $files as $file}
+                    <div class="row align-items-center" data-aos="fade-{if $i@iteration is even}left{else}right{/if}">
+                        <div class="col-3 col-md-2 text-md-right mb-4 mb-md-5">
+                            <div class="b-program__number">{$file->i}</div>
+                        </div>
+                        <div class="col-9 col-md-3 text-md-center mb-4 mb-md-5">
+                            <a style="color:white;" href="{$file->path}" download>Скачать</a>
+                        </div>
+                        <div class="col-12 col-md-7 mb-5">
+                            <div class="h5">{$file->name}.{$file->ext}</div>
+                        </div>
+                    </div>
+                    {$i=$i+1}
+                {/foreach}
+               {else}
+                    Файлов пока нет
+               {/if}
+            </div>
+        </div>
+    </div>
+{/strip}

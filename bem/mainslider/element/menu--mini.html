@@ -1,0 +1,20 @@
+{strip}
+    <div class="row align-items-center py-5 flex-md-nowrap">
+
+        <div class="col-12 col-md-auto mb-3 mb-md-0 text-center text-md-left">
+            {if !empty($theme_settings.mainslider__logo_link)}<a href="{eval var=$theme_settings.mainslider__logo_link|escape}">{/if}
+                {if !empty($theme_settings.mainslider__logo)}
+                    <img class="b-mainslider__logo img-fluid" src="{$wa_theme_url}{$theme_settings.mainslider__logo}" alt="{$wa->accountName()|escape}">
+                {else}
+                    <span class="b-mainslider__logo_text">{eval var=$theme_settings.mainslider__name}</span>
+                {/if}
+            {if !empty($theme_settings.mainslider__logo_link)}</a>{/if}
+        </div>
+
+        <div class="col-12 col-md text-center text-md-right">
+            <a href="{$wa_app_url}" class="btn btn-outline-{if empty($theme_settings.mainslider__dark_text)}light{else}dark{/if}">
+                <span class="material-icons">reply</span> На главную
+            </a>
+        </div>
+    </div>
+{/strip}

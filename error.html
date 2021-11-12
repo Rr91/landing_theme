@@ -1,0 +1,10 @@
+<h1>
+	{if $error_code}{$error_code}. {/if}
+	{if $error_message}{$error_message}{else}[s`Error`]{/if}
+</h1>
+<div class="my-5">
+    [s`The requested resource is not available.`]
+</div>
+<div class="my-5 pb-5">
+    <a href="{$wa_app_url}" class="btn btn-outline-primary">[`Вернуться на главную`]</a>
+</div>

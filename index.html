@@ -1,0 +1,77 @@
+{strip}
+<!DOCTYPE html>
+<html lang="{if $wa->locale()}{$wa->locale()|truncate:2:''}{else}ru{/if}">
+{$_head_prefix = $wa->globals("headPrefix")}
+<head {if !empty($_head_prefix)}prefix="{$_head_prefix}"{/if}>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$wa->title()|escape}</title>
+    <meta name="keywords" content="{$wa->meta('keywords')|escape}" />
+    <meta name="description" content="{$wa->meta('description')|escape}" />
+    {if !empty($canonical)}<link rel="canonical" href="{$canonical}"/>{/if}
+    <link rel="shortcut icon" href="/favicon.ico"/>
+
+    {$theme__color = $theme_settings.theme__color|replace:'bem/theme/colors/':''|replace:'.png':''}
+    <link href="{$wa_theme_url}styles-{$theme__color}.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    {$wa->css()}
+
+    {fetch file="`$wa_active_theme_path`/users.css" assign='users_css'}
+    <link href="{$wa_theme_url}users.css?v={$users_css|md5}" rel="stylesheet">
+
+    {if $theme_settings.theme__font|strstr:'google_'}
+        {if $theme_settings.theme__font|strstr:'fira'}{$_real_font_name = 'Fira+Sans:400,500,700,400italic,500italic,700italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'opensans'}{$_real_font_name = 'Open+Sans:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'ptsans'}{$_real_font_name = 'PT+Sans:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'ptserif'}{$_real_font_name = 'PT+Serif:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'roboto'}{$_real_font_name = 'Roboto:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'lora'}{$_real_font_name = 'Lora:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.theme__font|strstr:'ubuntu'}{$_real_font_name = 'Ubuntu:400,700,700italic,400italic'}{/if}
+        <link href='https://fonts.googleapis.com/css?family={$_real_font_name}&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    {/if}
+
+    <script src="{$wa_static_url}wa-content/js/jquery/jquery-1.11.1.min.js" ></script>
+    <script src="{$wa_static_url}wa-content/js/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{$wa_theme_url}echo_all.js?v{$wa_theme_version}"></script>
+
+    {$wa->js()}
+
+    {$wa->head()}
+
+    {* для пользовательских данных *}
+    {include file="`$wa_active_theme_path`/head.html" inline}
+
+</head>
+<body class="b-theme b-theme--webinar_land b-theme--{$theme_settings.theme__font|escape}">
+    <div id="top"></div>
+
+    {* для пользовательских данных *}
+    {include file="`$wa_active_theme_path`/header.html" inline}
+
+    {if $wa->currentUrl(false, true) == $wa_app_url}
+        {include file="home.html"}
+    {else}
+        {include file="bem/mainslider/mainslider--mini.html"}
+        <div class="container my-5">
+           {$content|default:''}
+        </div>
+    {/if}
+
+    {include file="bem/footer/footer.html"}
+
+    {* для пользовательских данных *}
+    {include file="`$wa_active_theme_path`/footer.html" inline}
+
+    {literal}
+    <script>
+        AOS.init({duration: 500, once: true, disable: 'mobile'});
+        $(document).on('initialized.owl.carousel', function () {
+            AOS.refresh();
+        })
+    </script>
+    {/literal}
+</body>
+</html>
+{/strip}

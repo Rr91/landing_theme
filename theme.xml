@@ -1,0 +1,1828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
+<theme id="webinar_land" app="site" vendor="962376" author="Echo-company" version="1.1" edition="11">
+  <name locale="en_US">Landing for training</name>
+  <name locale="ru_RU">Лендинг для тренинга</name>
+  <instruction locale="ru_RU">https://ss.echo-company.ru/docs/webinar_land/</instruction>
+  <support locale="ru_RU">support@echo-company.ru</support>
+  <files>
+    <file path="error.html"/>
+    <file path="footer.html"/>
+    <file path="forgotpassword.html"/>
+    <file path="head.html"/>
+    <file path="header.html"/>
+    <file path="home.html" custom="0" modified="1">
+      <description locale="ru_RU"/>
+    </file>
+    <file path="index.html"/>
+    <file path="login.html"/>
+    <file path="my.nav.html"/>
+    <file path="my.profile.html"/>
+    <file path="page.html"/>
+    <file path="signup.html"/>
+    <file path="bem/about/about.html"/>
+    <file path="bem/contact_mini/contact_mini.html"/>
+    <file path="bem/footer/footer.html"/>
+    <file path="bem/form/form.html"/>
+    <file path="bem/html/html.html"/>
+    <file path="bem/mainslider/element/menu--mini.html"/>
+    <file path="bem/mainslider/element/menu.html"/>
+    <file path="bem/mainslider/mainslider--mini.html"/>
+    <file path="bem/mainslider/mainslider.html"/>
+    <file path="bem/partners/partners.html"/>
+    <file path="bem/presenter/presenter.html"/>
+    <file path="bem/program/program.html" custom="0" modified="1">
+      <description locale="ru_RU"/>
+    </file>
+    <file path="bem/reviews/reviews.html" custom="0" modified="1">
+      <description locale="ru_RU"/>
+    </file>
+    <file path="bem/speakers/speakers.html"/>
+    <file path="bem/text/text.html"/>
+    <file path="users.css" custom="0" modified="1">
+      <description locale="en_US">User CSS file</description>
+      <description locale="ru_RU"/>
+    </file>
+  </files>
+  <settings>
+    <setting var="divider_theme" control_type="group_divider">
+      <value/>
+      <name locale="en_US">Main settings</name>
+      <name locale="ru_RU">Основные настройки</name>
+    </setting>
+    <setting var="theme__font" control_type="select">
+      <value>google_fira</value>
+      <name locale="ru_RU">Семейство шрифтов</name>
+      <name locale="en_US">Font family</name>
+      <options>
+        <option value="">
+          <name locale="ru_RU">По умолчанию</name>
+          <name locale="en_US">Default</name>
+        </option>
+        <option value="google_fira">
+          <name locale="ru_RU">Fira Sans (Google Fonts)</name>
+          <name locale="en_US">Fira Sans (Google Fonts)</name>
+        </option>
+        <option value="google_opensans">
+          <name locale="ru_RU">Open Sans (Google Fonts)</name>
+          <name locale="en_US">Open Sans (Google Fonts)</name>
+        </option>
+        <option value="google_ptsans">
+          <name locale="ru_RU">PT Sans (Google Fonts)</name>
+          <name locale="en_US">PT Sans (Google Fonts)</name>
+        </option>
+        <option value="google_ptserif">
+          <name locale="ru_RU">PT Serif (Google Fonts)</name>
+          <name locale="en_US">PT Serif (Google Fonts)</name>
+        </option>
+        <option value="google_roboto">
+          <name locale="ru_RU">Roboto (Google Fonts)</name>
+          <name locale="en_US">Roboto (Google Fonts)</name>
+        </option>
+        <option value="google_lora">
+          <name locale="ru_RU">Lora (Google Fonts)</name>
+          <name locale="en_US">Lora (Google Fonts)</name>
+        </option>
+        <option value="google_ubuntu">
+          <name locale="ru_RU">Ubuntu (Google Fonts)</name>
+          <name locale="en_US">Ubuntu (Google Fonts)</name>
+        </option>
+        <option value="georgia">
+          <name locale="ru_RU">Georgia</name>
+          <name locale="en_US">Georgia</name>
+        </option>
+        <option value="verdana">
+          <name locale="ru_RU">Verdana</name>
+          <name locale="en_US">Verdana</name>
+        </option>
+        <option value="trebuchet">
+          <name locale="ru_RU">Trebuchet MS</name>
+          <name locale="en_US">Trebuchet MS</name>
+        </option>
+        <option value="helvetica">
+          <name locale="ru_RU">Helvetica (Arial)</name>
+          <name locale="en_US">Helvetica (Arial)</name>
+        </option>
+      </options>
+    </setting>
+    <setting var="theme__color" control_type="image_select">
+      <value>bem/theme/colors/lightblue.png</value>
+      <name locale="ru_RU">Цветовая палитра</name>
+      <name locale="en_US">Color theme</name>
+      <options>
+        <option value="bem/theme/colors/orange.png"/>
+        <option value="bem/theme/colors/blue.png"/>
+        <option value="bem/theme/colors/green.png"/>
+        <option value="bem/theme/colors/lightblue.png"/>
+        <option value="bem/theme/colors/pink.png"/>
+        <option value="bem/theme/colors/yellow.png"/>
+        <option value="bem/theme/colors/lightred.png"/>
+      </options>
+    </setting>
+    <setting var="theme__blocks" control_type="text">
+      <value>mainslider,presenter,html,text,reviews,program,contact_mini,form</value>
+      <name locale="en_US">Blocks on home</name>
+      <name locale="ru_RU">Блоки на главной</name>
+      <description locale="en_US">List of showing block on home page comma separation, example:
+            mainslider,presenter,program,about,speakers,partners,text,html,reviews,form
+        </description>
+      <description locale="ru_RU">
+Список и порядок отображаемых блоков на главной странице через запятую, возможные значения:
+    &lt;ul&gt;
+    &lt;li&gt;mainslider - оферта&lt;/li&gt;
+    &lt;li&gt;presenter - ведущий&lt;/li&gt;
+    &lt;li&gt;program - программа&lt;/li&gt;
+    &lt;li&gt;about - о событие&lt;/li&gt;
+    &lt;li&gt;speakers - ведущие&lt;/li&gt;
+    &lt;li&gt;partners - партнеры&lt;/li&gt;
+    &lt;li&gt;text - текст&lt;/li&gt;
+    &lt;li&gt;html - html&lt;/li&gt;
+    &lt;li&gt;reviews - отзывы&lt;/li&gt;
+    &lt;li&gt;form - форма регистрации&lt;/li&gt;
+    &lt;li&gt;contact_mini - контакты&lt;/li&gt;
+    </description>
+    </setting>
+    <!-- Mainslider BLOCK -->
+    <setting var="divider_mainslider" control_type="group_divider">
+      <value/>
+      <name locale="en_US">Offero</name>
+      <name locale="ru_RU">Оферта</name>
+    </setting>
+    <setting var="mainslider__logo" control_type="image">
+      <value/>
+      <filename>bem/mainslider/logo--custom.*</filename>
+      <name locale="en_US">Logo</name>
+      <name locale="ru_RU">Логотип</name>
+      <description locale="ru_RU">Рекомендуется светный логотип, размер 300x100px (для retina)</description>
+      <description locale="en_US">Recommended light logo, size 300x100px (for retina)</description>
+    </setting>
+    <setting var="mainslider__logo_link" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка с логотипа</name>
+      <name locale="en_US">Link from logo</name>
+    </setting>
+    <setting var="mainslider__name" control_type="text">
+      <value/>
+      <name locale="en_US">Name in mainslider</name>
+      <name locale="ru_RU">Название в меню</name>
+      <description locale="en_US">Show if logo not set</description>
+      <description locale="ru_RU">Выводится если нет логотипа</description>
+    </setting>
+    <setting var="mainslider__links" control_type="text">
+      <value><![CDATA[#presenter||О бахе
+#reviews||Новости
+#program||Файлы
+#form||Контакты
+        ]]></value>
+      <name locale="en_US">Header mainslider</name>
+      <name locale="ru_RU">Верхнее меню</name>
+      <description locale="ru_RU">формат: ссылка||название</description>
+    </setting>
+    <setting var="mainslider__date" control_type="text">
+      <value>[21.05 - 23.05]</value>
+      <name locale="ru_RU">Дата мероприятия</name>
+      <description locale="ru_RU">текст в скобках [] - выделяется цветом</description>
+    </setting>
+    <setting var="mainslider__header" control_type="text">
+      <value>[Баха Арчеда 2021]</value>
+      <name locale="ru_RU">Заголовок</name>
+      <name locale="en_US">Header</name>
+      <description locale="ru_RU">текст в скобках [] - выделяется цветом</description>
+      <description locale="en_US">text in [] - colorize []</description>
+    </setting>
+    <setting var="mainslider__description" control_type="text">
+      <value>Кросс-кантри ралли, эндуро на квадроциклах</value>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+      <description locale="ru_RU">текст в скобках [] - выделяется цветом</description>
+      <description locale="en_US">text in [] - colorize []</description>
+    </setting>
+    <setting var="mainslider__button" control_type="text">
+      <value>#form||Обратная связь||important_devices</value>
+      <name locale="en_US">Button</name>
+      <name locale="ru_RU">Кнопка</name>
+      <description locale="ru_RU">формат: &lt;strong style="color:black"&gt;ссылка||текст||класс иконка&lt;/strong&gt; (класс иконки - Material Icons можно выбрать &lt;a href="https://material.io/resources/icons/" target="_blank"&gt;здесь&lt;/a&gt;)</description>
+    </setting>
+    <setting var="mainslider__second_button" control_type="text">
+      <value>#about||Подробнее</value>
+      <name locale="en_US">Second button</name>
+      <name locale="ru_RU">Дополнительная кнопка</name>
+      <description locale="ru_RU">формат: &lt;strong style="color:black"&gt;ссылка||текст||класс иконка&lt;/strong&gt; (класс иконки - Material Icons можно выбрать &lt;a href="https://material.io/resources/icons/" target="_blank"&gt;здесь&lt;/a&gt;)</description>
+    </setting>
+    <setting var="mainslider__bg" control_type="image">
+      <value>bem/mainslider/background--custom.jpg?v1618302250</value>
+      <filename>bem/mainslider/background--custom.*</filename>
+      <name locale="en_US">Background image</name>
+      <name locale="ru_RU">Фон блока</name>
+      <description locale="ru_RU">рекомендуемый размер 1920x970px</description>
+      <description locale="en_US">recommended size 1920x970px</description>
+    </setting>
+    <setting var="mainslider__dark_text" control_type="checkbox">
+      <value/>
+      <name locale="ru_RU">Темный текст</name>
+      <name locale="en_US">Dark text</name>
+      <description locale="ru_RU">используйте если у вас светлый или белый фон</description>
+      <description locale="en_US">use if you have light or white background</description>
+    </setting>
+    <!-- presenter BLOCK -->
+    <setting var="divider_presenter" control_type="group_divider">
+      <value/>
+      <name locale="en_US">Ведущий вебинара</name>
+      <name locale="ru_RU">Ведущий вебинара</name>
+    </setting>
+    <setting var="presenter__photo" control_type="image">
+      <value>bem/presenter/photo--custom.png?v1618304684</value>
+      <filename>bem/presenter/photo--custom.*</filename>
+      <name locale="en_US">Photo</name>
+      <name locale="ru_RU">Фотография</name>
+    </setting>
+    <setting var="presenter__title" control_type="text">
+      <value>Баха Арчеда 2021</value>
+      <name locale="ru_RU">Заголовок блока</name>
+    </setting>
+    <setting var="presenter__fio" control_type="text">
+      <value>21-23 мая в г. Фролово</value>
+      <name locale="ru_RU">ФИО</name>
+    </setting>
+    <setting var="presenter__work" control_type="text">
+      <value>состоится 1 Этап Чемпионата России по Кросс-Кантри Ралли и 1 Этап Кубка России по Ралли Рейдам.</value>
+      <name locale="ru_RU">Должность</name>
+    </setting>
+    <setting var="presenter__description" control_type="text">
+      <value>Баха «Арчеда» пройдет под эгидой Федерации Мотоциклетного Спорта России и Российской Автомобильной Федерации, при поддержке РОО «ФАСМСВО» г. Волгоград. Технический Организатор РОУ «Молодежная инициатива» г. Фролово. </value>
+      <name locale="ru_RU">О ведущем</name>
+    </setting>
+    <setting var="presenter__number_1" control_type="text">
+      <value>460 км</value>
+      <name locale="ru_RU">Цифра 1</name>
+    </setting>
+    <setting var="presenter__text_1" control_type="text">
+      <value>дистанция спец участков</value>
+      <name locale="ru_RU">Текст к цифре 1</name>
+    </setting>
+    <setting var="presenter__number_2" control_type="text">
+      <value>40</value>
+      <name locale="ru_RU">Цифра 2</name>
+    </setting>
+    <setting var="presenter__text_2" control_type="text">
+      <value>участников</value>
+      <name locale="ru_RU">Текст к цифре 2</name>
+    </setting>
+    <setting var="presenter__number_3" control_type="text">
+      <value/>
+      <name locale="ru_RU">Цифра 3</name>
+    </setting>
+    <setting var="presenter__text_3" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст к цифре 3</name>
+    </setting>
+    <setting var="presenter__number_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Цифра 4</name>
+    </setting>
+    <setting var="presenter__text_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст к цифре 4</name>
+    </setting>
+    <!-- program BLOCK -->
+    <setting var="divider_program" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Программа вебинара</name>
+    </setting>
+    <setting var="program__title" control_type="text">
+      <value>Файлы</value>
+      <name locale="ru_RU">Заголовок блока</name>
+    </setting>
+    <setting var="program__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="program__time_1" control_type="text">
+      <value>скачать</value>
+      <name locale="ru_RU">Время 1</name>
+      <name locale="en_US">Time 1</name>
+    </setting>
+    <setting var="program__header_1" control_type="text">
+      <value>Регламент мото</value>
+      <name locale="ru_RU">Заголовок 1</name>
+      <name locale="en_US">Header 1</name>
+    </setting>
+    <setting var="program__text_1" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 1</name>
+      <name locale="en_US">Description 1</name>
+    </setting>
+    <setting var="program__time_2" control_type="text">
+      <value>скачать</value>
+      <name locale="ru_RU">Время 2</name>
+      <name locale="en_US">Time 2</name>
+    </setting>
+    <setting var="program__header_2" control_type="text">
+      <value>Пресс релиз</value>
+      <name locale="ru_RU">Заголовок 2</name>
+      <name locale="en_US">Header 2</name>
+    </setting>
+    <setting var="program__text_2" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 2</name>
+      <name locale="en_US">Description 2</name>
+    </setting>
+    <setting var="program__time_3" control_type="text">
+      <value>скачать</value>
+      <name locale="ru_RU">Время 3</name>
+      <name locale="en_US">Time 3</name>
+    </setting>
+    <setting var="program__header_3" control_type="text">
+      <value>Заявка на участие</value>
+      <name locale="ru_RU">Заголовок 3</name>
+      <name locale="en_US">Header 3</name>
+    </setting>
+    <setting var="program__text_3" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 3</name>
+      <name locale="en_US">Description 3</name>
+    </setting>
+    <setting var="program__time_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 4</name>
+      <name locale="en_US">Time 4</name>
+    </setting>
+    <setting var="program__header_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 4</name>
+      <name locale="en_US">Header 4</name>
+    </setting>
+    <setting var="program__text_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 4</name>
+      <name locale="en_US">Description 4</name>
+    </setting>
+    <setting var="program__time_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 5</name>
+      <name locale="en_US">Time 5</name>
+    </setting>
+    <setting var="program__header_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 5</name>
+      <name locale="en_US">Header 5</name>
+    </setting>
+    <setting var="program__text_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 5</name>
+      <name locale="en_US">Description 5</name>
+    </setting>
+    <setting var="program__time_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 6</name>
+      <name locale="en_US">Time 6</name>
+    </setting>
+    <setting var="program__header_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 6</name>
+      <name locale="en_US">Header 6</name>
+    </setting>
+    <setting var="program__text_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 6</name>
+      <name locale="en_US">Description 6</name>
+    </setting>
+    <setting var="program__time_7" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 7</name>
+      <name locale="en_US">Time 7</name>
+    </setting>
+    <setting var="program__header_7" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 7</name>
+      <name locale="en_US">Header 7</name>
+    </setting>
+    <setting var="program__text_7" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 7</name>
+      <name locale="en_US">Description 7</name>
+    </setting>
+    <setting var="program__time_8" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 8</name>
+      <name locale="en_US">Time 8</name>
+    </setting>
+    <setting var="program__header_8" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 8</name>
+      <name locale="en_US">Header 8</name>
+    </setting>
+    <setting var="program__text_8" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 8</name>
+      <name locale="en_US">Description 8</name>
+    </setting>
+    <setting var="program__time_9" control_type="text">
+      <value/>
+      <name locale="ru_RU">Время 9</name>
+      <name locale="en_US">Time 9</name>
+    </setting>
+    <setting var="program__header_9" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 9</name>
+      <name locale="en_US">Header 9</name>
+    </setting>
+    <setting var="program__text_9" control_type="text">
+      <value/>
+      <name locale="ru_RU">Описание 9</name>
+      <name locale="en_US">Description 9</name>
+    </setting>
+    <setting var="program__bg" control_type="image">
+      <value>bem/program/background--custom.jpg?v1618307071</value>
+      <filename>bem/program/background--custom.*</filename>
+      <name locale="ru_RU">Фон</name>
+    </setting>
+    <!-- about BLOCK -->
+    <setting var="divider_about" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">О вебинаре</name>
+    </setting>
+    <setting var="about__title" control_type="text">
+      <value>Подробнее о вебинара</value>
+      <name locale="ru_RU">Заголовок блока</name>
+    </setting>
+    <setting var="about__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="about__title_1" control_type="text">
+      <value>Подарок всем</value>
+      <name locale="ru_RU">Заголовок 1</name>
+    </setting>
+    <setting var="about__icon_1" control_type="text">
+      <value>card_giftcard</value>
+      <name locale="ru_RU">Иконка 1</name>
+    </setting>
+    <setting var="about__text_1" control_type="text">
+      <value>Каждому участнику вебинара мы дарим подарок - скидку на наши услуги и бесплатный чек-лист</value>
+      <name locale="ru_RU">Текст 1</name>
+    </setting>
+    <setting var="about__title_2" control_type="text">
+      <value>Реальные кейсы</value>
+      <name locale="ru_RU">Заголовок 2</name>
+    </setting>
+    <setting var="about__icon_2" control_type="text">
+      <value>work</value>
+      <name locale="ru_RU">Иконка 2</name>
+    </setting>
+    <setting var="about__text_2" control_type="text">
+      <value>На вебинаре будут рассмотрены реальные кейсы наших компаний партнеров</value>
+      <name locale="ru_RU">Текст 2</name>
+    </setting>
+    <setting var="about__title_3" control_type="text">
+      <value>Озарение</value>
+      <name locale="ru_RU">Заголовок 3</name>
+    </setting>
+    <setting var="about__icon_3" control_type="text">
+      <value>flare</value>
+      <name locale="ru_RU">Иконка 3</name>
+    </setting>
+    <setting var="about__text_3" control_type="text">
+      <value>После вебинара у вас будет четкий ответ на извечный вопрос: кто виновать и что делать?</value>
+      <name locale="ru_RU">Текст 3</name>
+    </setting>
+    <setting var="about__title_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Заголовок 4</name>
+    </setting>
+    <setting var="about__icon_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Иконка 4</name>
+    </setting>
+    <setting var="about__text_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст 4</name>
+    </setting>
+    <!-- speakers BLOCK -->
+    <setting var="divider_speakers" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Спикеры</name>
+    </setting>
+    <setting var="speakers__title" control_type="text">
+      <value>Спикеры</value>
+      <name locale="ru_RU">Заголовок блока</name>
+    </setting>
+    <setting var="speakers__description" control_type="text">
+      <value>Расписание секций вебинара на день</value>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="speakers__button_text" control_type="text">
+      <value>Подробнее</value>
+      <name locale="ru_RU">Текст на кнопке подробнее</name>
+    </setting>
+    <setting var="speakers__bg" control_type="image">
+      <value>bem/speakers/background.jpg</value>
+      <filename>bem/speakers/background--custom.*</filename>
+      <name locale="ru_RU">Фон</name>
+    </setting>
+    <setting var="divider_speaker_1" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_1</value>
+      <name locale="ru_RU">Спикер 1</name>
+    </setting>
+    <setting var="speakers__image_1" control_type="image">
+      <value>bem/speakers/image-1.png</value>
+      <filename>bem/speakers/image-1--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_1" control_type="text">
+      <value>Вадим Драгунов</value>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_1" control_type="text">
+      <value>Руководитель отдела маркетинга и рекламы</value>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_1" control_type="text">
+      <value><![CDATA[            
+Быть энтузиасткой сделалось ее общественным положением, и иногда, когда ей даже того не хотелось, она, чтобы не обмануть ожиданий людей, знавших ее, делалась энтузиасткой. Сдержанная улыбка, игравшая постоянно на лице Анны Павловны, хотя и не шла к ее отжившим чертам, выражала, как у избалованных детей, постоянное сознание своего милого недостатка, от которого она не хочет, не может и не находит нужным исправляться.
+            
+        ]]></value>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <setting var="divider_speaker_2" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_2</value>
+      <name locale="ru_RU">Спикер 2</name>
+    </setting>
+    <setting var="speakers__image_2" control_type="image">
+      <value>bem/speakers/image-2.png</value>
+      <filename>bem/speakers/image-2--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_2" control_type="text">
+      <value>Даниэль Миллер</value>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_2" control_type="text">
+      <value>Один из наиболее известных публицистов и писателей</value>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_2" control_type="text">
+      <value><![CDATA[            
+Так говорила в июле 1805 года известная Анна Павловна Шерер, фрейлина и приближенная императрицы Марии Феодоровны, встречая важного и чиновного князя Василия, первого приехавшего на ее вечер. Анна Павловна кашляла несколько дней, у нее был грипп, как она говорила (грипп был тогда новое слово, употреблявшееся только редкими). В записочках, разосланных утром с красным лакеем, было написано без различия во всех:
+            
+        ]]></value>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <setting var="divider_speaker_3" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_3</value>
+      <name locale="ru_RU">Спикер 3</name>
+    </setting>
+    <setting var="speakers__image_3" control_type="image">
+      <value>bem/speakers/image-3.png</value>
+      <filename>bem/speakers/image-3--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_3" control_type="text">
+      <value>Анна Павловна</value>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_3" control_type="text">
+      <value>Предпрениматель, организатор общественного движения</value>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_3" control_type="text">
+      <value><![CDATA[            
+Молодая княгиня Болконская приехала с работой в шитом золотом бархатном мешке. Ее хорошенькая, с чуть черневшимися усиками верхняя губка была коротка по зубам, но тем милее она открывалась и тем еще милее вытягивалась иногда и опускалась на нижнюю. Как это бывает у вполне привлекательных женщин, недостаток ее — короткость губы и полуоткрытый рот — казались ее особенною, собственно ее красотой. Всем было весело смотреть на эту полную здоровья и живости хорошенькую будущую мать, так легко переносившую свое положение. Старикам и скучающим, мрачным молодым людям казалось, что они сами делаются похожи на нее, побыв и поговорив несколько времени с ней. Кто говорил с ней и видел при каждом слове ее светлую улыбочку и блестящие белые зубы, которые виднелись беспрестанно, тот думал, что он особенно нынче любезен. И это думал каждый.
+            
+        ]]></value>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <setting var="divider_speaker_4" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_4</value>
+      <name locale="ru_RU">Спикер 4</name>
+    </setting>
+    <setting var="speakers__image_4" control_type="image">
+      <value/>
+      <filename>bem/speakers/image-4--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <setting var="divider_speaker_5" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_5</value>
+      <name locale="ru_RU">Спикер 5</name>
+    </setting>
+    <setting var="speakers__image_5" control_type="image">
+      <value/>
+      <filename>bem/speakers/image-5--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <setting var="divider_speaker_6" control_type="group_divider">
+      <value>divider_speakers/divider_speaker_6</value>
+      <name locale="ru_RU">Спикер 6</name>
+    </setting>
+    <setting var="speakers__image_6" control_type="image">
+      <value/>
+      <filename>bem/speakers/image-6--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="speakers__fio_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">ФИО</name>
+      <name locale="en_US">FIO</name>
+    </setting>
+    <setting var="speakers__work_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Должность</name>
+      <name locale="en_US">Position</name>
+    </setting>
+    <setting var="speakers__detail_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подробный текст</name>
+      <name locale="en_US">Detail text</name>
+    </setting>
+    <!-- partners BLOCK -->
+    <setting var="divider_partners" control_type="group_divider">
+      <value/>
+      <name locale="en_US">Info support</name>
+      <name locale="ru_RU">Информационная поддержка</name>
+    </setting>
+    <setting var="partners__title" control_type="text">
+      <value>Информационная поддержка</value>
+      <name locale="ru_RU">Заголовок</name>
+      <name locale="en_US">Header</name>
+    </setting>
+    <setting var="partners__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="partners__image_1" control_type="image">
+      <value>bem/partners/default.png</value>
+      <filename>bem/partners/custom_1.*</filename>
+      <name locale="ru_RU">Логотип 1</name>
+      <name locale="en_US">Logo 1</name>
+    </setting>
+    <setting var="partners__alt_1" control_type="text">
+      <value>WebAsyst</value>
+      <name locale="ru_RU">Подпись (alt)  1</name>
+      <name locale="en_US">Image alt 1</name>
+    </setting>
+    <setting var="partners__link_1" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 1</name>
+      <name locale="en_US">Link 1</name>
+    </setting>
+    <setting var="partners__image_2" control_type="image">
+      <value>bem/partners/default.png</value>
+      <filename>bem/partners/custom_2.*</filename>
+      <name locale="ru_RU">Логотип 2</name>
+      <name locale="en_US">Logo 2</name>
+    </setting>
+    <setting var="partners__alt_2" control_type="text">
+      <value>WebAsyst</value>
+      <name locale="ru_RU">Подпись (alt)  2</name>
+      <name locale="en_US">Image alt 2</name>
+    </setting>
+    <setting var="partners__link_2" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 2</name>
+      <name locale="en_US">Link 2</name>
+    </setting>
+    <setting var="partners__image_3" control_type="image">
+      <value>bem/partners/default.png</value>
+      <filename>bem/partners/custom_3.*</filename>
+      <name locale="ru_RU">Логотип 3</name>
+      <name locale="en_US">Logo 3</name>
+    </setting>
+    <setting var="partners__alt_3" control_type="text">
+      <value>WebAsyst</value>
+      <name locale="ru_RU">Подпись (alt)  3</name>
+      <name locale="en_US">Image alt 3</name>
+    </setting>
+    <setting var="partners__link_3" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 3</name>
+      <name locale="en_US">Link 3</name>
+    </setting>
+    <setting var="partners__image_4" control_type="image">
+      <value>bem/partners/default.png</value>
+      <filename>bem/partners/custom_4.*</filename>
+      <name locale="ru_RU">Логотип 4</name>
+      <name locale="en_US">Logo 4</name>
+    </setting>
+    <setting var="partners__alt_4" control_type="text">
+      <value>WebAsyst</value>
+      <name locale="ru_RU">Подпись (alt)  4</name>
+      <name locale="en_US">Image alt 4</name>
+    </setting>
+    <setting var="partners__link_4" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 4</name>
+      <name locale="en_US">Link 4</name>
+    </setting>
+    <setting var="partners__image_5" control_type="image">
+      <value/>
+      <filename>bem/partners/custom_5.*</filename>
+      <name locale="ru_RU">Логотип 5</name>
+      <name locale="en_US">Logo 5</name>
+    </setting>
+    <setting var="partners__alt_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  5</name>
+      <name locale="en_US">Image alt 5</name>
+    </setting>
+    <setting var="partners__link_5" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 5</name>
+      <name locale="en_US">Link 5</name>
+    </setting>
+    <setting var="partners__image_6" control_type="image">
+      <value/>
+      <filename>bem/partners/custom_6.*</filename>
+      <name locale="ru_RU">Логотип 6</name>
+      <name locale="en_US">Logo 6</name>
+    </setting>
+    <setting var="partners__alt_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  6</name>
+      <name locale="en_US">Image alt 6</name>
+    </setting>
+    <setting var="partners__link_6" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 6</name>
+      <name locale="en_US">Link 6</name>
+    </setting>
+    <setting var="partners__image_7" control_type="image">
+      <value/>
+      <filename>bem/partners/custom_7.*</filename>
+      <name locale="ru_RU">Логотип 7</name>
+      <name locale="en_US">Logo 7</name>
+    </setting>
+    <setting var="partners__alt_7" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  7</name>
+      <name locale="en_US">Image alt 7</name>
+    </setting>
+    <setting var="partners__link_7" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 7</name>
+      <name locale="en_US">Link 7</name>
+    </setting>
+    <setting var="partners__image_8" control_type="image">
+      <value/>
+      <filename>bem/partners/custom_8.*</filename>
+      <name locale="ru_RU">Логотип 8</name>
+      <name locale="en_US">Logo 8</name>
+    </setting>
+    <setting var="partners__alt_8" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  8</name>
+      <name locale="en_US">Image alt 8</name>
+    </setting>
+    <setting var="partners__link_8" control_type="text">
+      <value/>
+      <name locale="ru_RU">Ссылка 8</name>
+      <name locale="en_US">Link 8</name>
+      <description locale="ru_RU">Включите галочку "Показать скрытые настройки" вверху настроек для отображения еще вариантов</description>
+    </setting>
+    <setting var="partners__image_9" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_9.*</filename>
+      <name locale="ru_RU">Логотип 9</name>
+      <name locale="en_US">Logo 9</name>
+    </setting>
+    <setting var="partners__alt_9" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  9</name>
+      <name locale="en_US">Image alt 9</name>
+    </setting>
+    <setting var="partners__link_9" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 9</name>
+      <name locale="en_US">Link 9</name>
+    </setting>
+    <setting var="partners__image_10" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_10.*</filename>
+      <name locale="ru_RU">Логотип 10</name>
+      <name locale="en_US">Logo 10</name>
+    </setting>
+    <setting var="partners__alt_10" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  10</name>
+      <name locale="en_US">Image alt 10</name>
+    </setting>
+    <setting var="partners__link_10" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 10</name>
+      <name locale="en_US">Link 10</name>
+    </setting>
+    <setting var="partners__image_11" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_11.*</filename>
+      <name locale="ru_RU">Логотип 11</name>
+      <name locale="en_US">Logo 11</name>
+    </setting>
+    <setting var="partners__alt_11" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  11</name>
+      <name locale="en_US">Image alt 11</name>
+    </setting>
+    <setting var="partners__link_11" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 11</name>
+      <name locale="en_US">Link 11</name>
+    </setting>
+    <setting var="partners__image_12" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_12.*</filename>
+      <name locale="ru_RU">Логотип 12</name>
+      <name locale="en_US">Logo 12</name>
+    </setting>
+    <setting var="partners__alt_12" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  12</name>
+      <name locale="en_US">Image alt 12</name>
+    </setting>
+    <setting var="partners__link_12" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 12</name>
+      <name locale="en_US">Link 12</name>
+    </setting>
+    <setting var="partners__image_13" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_13.*</filename>
+      <name locale="ru_RU">Логотип 13</name>
+      <name locale="en_US">Logo 13</name>
+    </setting>
+    <setting var="partners__alt_13" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  13</name>
+      <name locale="en_US">Image alt 13</name>
+    </setting>
+    <setting var="partners__link_13" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 13</name>
+      <name locale="en_US">Link 13</name>
+    </setting>
+    <setting var="partners__image_14" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_14.*</filename>
+      <name locale="ru_RU">Логотип 14</name>
+      <name locale="en_US">Logo 14</name>
+    </setting>
+    <setting var="partners__alt_14" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  14</name>
+      <name locale="en_US">Image alt 14</name>
+    </setting>
+    <setting var="partners__link_14" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 14</name>
+      <name locale="en_US">Link 14</name>
+    </setting>
+    <setting var="partners__image_15" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_15.*</filename>
+      <name locale="ru_RU">Логотип 15</name>
+      <name locale="en_US">Logo 15</name>
+    </setting>
+    <setting var="partners__alt_15" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  15</name>
+      <name locale="en_US">Image alt 15</name>
+    </setting>
+    <setting var="partners__link_15" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 15</name>
+      <name locale="en_US">Link 15</name>
+    </setting>
+    <setting var="partners__image_16" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_16.*</filename>
+      <name locale="ru_RU">Логотип 16</name>
+      <name locale="en_US">Logo 16</name>
+    </setting>
+    <setting var="partners__alt_16" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  16</name>
+      <name locale="en_US">Image alt 16</name>
+    </setting>
+    <setting var="partners__link_16" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 16</name>
+      <name locale="en_US">Link 16</name>
+    </setting>
+    <setting var="partners__image_17" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_17.*</filename>
+      <name locale="ru_RU">Логотип 17</name>
+      <name locale="en_US">Logo 17</name>
+    </setting>
+    <setting var="partners__alt_17" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  17</name>
+      <name locale="en_US">Image alt 17</name>
+    </setting>
+    <setting var="partners__link_17" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 17</name>
+      <name locale="en_US">Link 17</name>
+    </setting>
+    <setting var="partners__image_18" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_18.*</filename>
+      <name locale="ru_RU">Логотип 18</name>
+      <name locale="en_US">Logo 18</name>
+    </setting>
+    <setting var="partners__alt_18" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  18</name>
+      <name locale="en_US">Image alt 18</name>
+    </setting>
+    <setting var="partners__link_18" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 18</name>
+      <name locale="en_US">Link 18</name>
+    </setting>
+    <setting var="partners__image_19" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_19.*</filename>
+      <name locale="ru_RU">Логотип 19</name>
+      <name locale="en_US">Logo 19</name>
+    </setting>
+    <setting var="partners__alt_19" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  19</name>
+      <name locale="en_US">Image alt 19</name>
+    </setting>
+    <setting var="partners__link_19" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 19</name>
+      <name locale="en_US">Link 19</name>
+    </setting>
+    <setting var="partners__image_20" control_type="image" invisible="true">
+      <value/>
+      <filename>bem/partners/custom_20.*</filename>
+      <name locale="ru_RU">Логотип 20</name>
+      <name locale="en_US">Logo 20</name>
+    </setting>
+    <setting var="partners__alt_20" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Подпись (alt)  20</name>
+      <name locale="en_US">Image alt 20</name>
+    </setting>
+    <setting var="partners__link_20" control_type="text" invisible="true">
+      <value/>
+      <name locale="ru_RU">Ссылка 20</name>
+      <name locale="en_US">Link 20</name>
+    </setting>
+    <!-- partners END BLOCK -->
+    <!-- Text BLOCK -->
+    <setting var="divider_text" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Текстовый блок</name>
+      <name locale="en_US">Text block</name>
+    </setting>
+    <setting var="text__title" control_type="text">
+      <value>Подробнее о гонке</value>
+      <name locale="ru_RU">Заголовок блока</name>
+    </setting>
+    <setting var="text__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="text__text" control_type="text">
+      <value><![CDATA[<p>После долгого перерыва Арчединско-Донской песчаный массив станет отправной точкой, возрождённой серии Мотоциклетных соревнований по Кросс-Кантри Ралли, а также впервые примет этап Кубка России по Ралли Рейдам. Участники в зачетных группах «Мото 450», Эндуро-квадроциклы и Мотовездеходы(SSV) и N2 будут сражаться на дистанции 450 км +, большая часть которой сложнейшие Арчединские Пески!</p>
+<p>Базовый лагерь соревнования располагается на территории Детского Оздоровительного Лагеря «Сосна». Те участники, кто успел побывать Пионерами, смогут окунуться в атмосферу Советского Пионерского Лагеря с Красными звездами на воротах и гипсовыми скульптурами.
+Начнется Соревнование с Суперскоростного Участка по трассе «Арчеда-ринг», который удобно расположен в черте г. Фролово. Утром в субботу, 21 мая все желающие могут лично посмотреть на бескомпромиссную борьбу за право приоритетного выбора стартовой позиции на следующий Скоростной Участок.</p>
+<p>А воскресным вечером 23 мая мы узнаем имена победителей и призеров, с которых начнется летопись победителей «Баха Арчеда».</p>
+]]></value>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="text__dark" control_type="checkbox">
+      <value>1</value>
+      <name locale="ru_RU">Темный блок</name>
+      <name locale="en_US">Dark block</name>
+    </setting>
+    <setting var="text__bg" control_type="image">
+      <value>bem/text/background--custom.jpg?v1618306940</value>
+      <filename>bem/text/background--custom.*</filename>
+      <name locale="ru_RU">Фон</name>
+    </setting>
+    <!-- Text END BLOCK -->
+    <!-- html BLOCK -->
+    <setting var="divider_html" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Html блок</name>
+      <name locale="en_US">Html block</name>
+    </setting>
+    <setting var="html__html" control_type="text">
+      <value><![CDATA[<div class="b-theme__block">
+    <div class="container text-center">
+        <div class="h2 b-theme__header" data-aos="fade-up">Подготовка маршрута</div>
+        <div  data-aos="fade-left">{$wa->block("video")}</div>
+    </div>
+</div>]]></value>
+      <name locale="ru_RU">HTML</name>
+      <name locale="en_US">HTML</name>
+    </setting>
+    <!-- html END BLOCK -->
+    <!-- Reviews BLOCK -->
+    <setting var="divider_reviews" control_type="group_divider">
+      <value/>
+      <name locale="en_US">Reviews</name>
+      <name locale="ru_RU">Отзывы</name>
+    </setting>
+    <setting var="reviews__title" control_type="text">
+      <value>Новости</value>
+      <name locale="ru_RU">Заголовок</name>
+      <name locale="en_US">Header</name>
+    </setting>
+    <setting var="reviews__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок</name>
+    </setting>
+    <setting var="divider_reviews_1" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_1</value>
+      <name locale="en_US">Review 1</name>
+      <name locale="ru_RU">Отзыв 1</name>
+    </setting>
+    <setting var="reviews__1_text" control_type="text">
+      <value><![CDATA[21-21 мая пройдет 1й Этап ЧР для мотоциклов, квадроциклов и SSV по кросс кантри ралли. Фролово ждет Вас!
+        ]]></value>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Review</name>
+    </setting>
+    <setting var="reviews__1_sign" control_type="text">
+      <value>3 марта 2021</value>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Review</name>
+    </setting>
+    <setting var="reviews__1_image" control_type="image">
+      <value>bem/reviews/image-1--custom.jpg?v1618571140</value>
+      <filename>bem/reviews/image-1--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Review</name>
+      <description locale="ru_RU">рекомендуемый размер 84x84px</description>
+      <description locale="en_US">recommended size 84x84px</description>
+    </setting>
+    <setting var="divider_reviews_2" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_2</value>
+      <name locale="en_US">Review 2</name>
+      <name locale="ru_RU">Отзыв 2</name>
+    </setting>
+    <setting var="reviews__2_text" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="reviews__2_sign" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Sign</name>
+    </setting>
+    <setting var="reviews__2_image" control_type="image">
+      <value/>
+      <filename>bem/reviews/image-2--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+    </setting>
+    <setting var="divider_reviews_3" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_3</value>
+      <name locale="en_US">Review 3</name>
+      <name locale="ru_RU">Отзыв 3</name>
+    </setting>
+    <setting var="reviews__3_text" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="reviews__3_sign" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Sign</name>
+    </setting>
+    <setting var="reviews__3_image" control_type="image">
+      <value/>
+      <filename>bem/reviews/image-3--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+    </setting>
+    <setting var="divider_reviews_4" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_4</value>
+      <name locale="en_US">Review 4</name>
+      <name locale="ru_RU">Отзыв 4</name>
+    </setting>
+    <setting var="reviews__4_text" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="reviews__4_sign" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Sign</name>
+    </setting>
+    <setting var="reviews__4_image" control_type="image">
+      <value/>
+      <filename>bem/reviews/image-4--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+    </setting>
+    <setting var="divider_reviews_5" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_5</value>
+      <name locale="en_US">Review 5</name>
+      <name locale="ru_RU">Отзыв 5</name>
+    </setting>
+    <setting var="reviews__5_text" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="reviews__5_sign" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Sign</name>
+    </setting>
+    <setting var="reviews__5_image" control_type="image">
+      <value/>
+      <filename>bem/reviews/image-5--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+    </setting>
+    <setting var="divider_reviews_6" control_type="group_divider">
+      <value>divider_reviews/divider_reviews_6</value>
+      <name locale="en_US">Review 6</name>
+      <name locale="ru_RU">Отзыв 6</name>
+    </setting>
+    <setting var="reviews__6_text" control_type="text">
+      <value/>
+      <name locale="ru_RU">Текст</name>
+      <name locale="en_US">Text</name>
+    </setting>
+    <setting var="reviews__6_sign" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подпись</name>
+      <name locale="en_US">Sign</name>
+    </setting>
+    <setting var="reviews__6_image" control_type="image">
+      <value/>
+      <filename>bem/reviews/image-6--custom.*</filename>
+      <name locale="ru_RU">Изображение</name>
+      <name locale="en_US">Image</name>
+    </setting>
+    <!-- Reviews END BLOCK -->
+    <setting var="divider_form" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Форма регистрации</name>
+    </setting>
+    <setting var="form__title" control_type="text">
+      <value>Обратная связь</value>
+      <name locale="ru_RU">Заголовок формы</name>
+      <name locale="en_US">Form header</name>
+    </setting>
+    <setting var="form__description" control_type="text">
+      <value/>
+      <name locale="ru_RU">Подзаголовок формы</name>
+      <name locale="en_US">Form subheader</name>
+    </setting>
+    <setting var="form__form_name" control_type="checkbox">
+      <value>1</value>
+      <name locale="ru_RU">Запрашивать имя</name>
+      <name locale="en_US">Use name field</name>
+    </setting>
+    <setting var="form__form_email" control_type="checkbox">
+      <value>1</value>
+      <name locale="ru_RU">Запрашивать Email</name>
+      <name locale="en_US">Use Email field</name>
+    </setting>
+    <setting var="form__form_phone" control_type="checkbox">
+      <value/>
+      <name locale="ru_RU">Запрашивать телефон</name>
+      <name locale="en_US">Use phone field</name>
+    </setting>
+    <setting var="form__form_captcha" control_type="checkbox">
+      <value/>
+      <name locale="ru_RU">Выводить капчу</name>
+      <name locale="en_US">Show captcha</name>
+      <description locale="ru_RU">При использование Google reCaptcha обязательно так как webAsyst не имеет возможности
+            отключить данную капчу. Также следует учитывать что webAsyst не может отображать две капчи на странице
+        </description>
+    </setting>
+    <setting var="form__form_submit" control_type="text">
+      <value>Отправить</value>
+      <name locale="ru_RU">Надпись на кнопке формы</name>
+      <name locale="en_US">Submit button text</name>
+    </setting>
+    <setting var="form__form_sign" control_type="text">
+      <value>            [`Нажимая на кнопку`] &lt;b&gt;{eval var=$theme_settings.form__form_submit}&lt;/b&gt; [`я даю согласие на`] &lt;a target="_blank" href=""&gt;[`обработку персональных данных`]&lt;/a&gt;</value>
+      <name locale="ru_RU">Подпись к форме</name>
+      <name locale="en_US">Form sign text</name>
+    </setting>
+    <setting var="form__form_success" control_type="text">
+      <value>[s`Your message has been sent.`]</value>
+      <name locale="ru_RU">Сообщение после успешной отправки формы</name>
+      <name locale="en_US">Success send message</name>
+    </setting>
+    <setting var="divider_contact_mini" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Контакты</name>
+    </setting>
+    <setting var="contact_mini__title" control_type="text">
+      <value>Остались вопросы? &amp;nbsp; [Всегда на связи!]</value>
+      <name locale="ru_RU">Заголовок блока</name>
+      <name locale="en_US">Block header</name>
+      <description locale="ru_RU">текст в скобках [] - выделяется цветом</description>
+    </setting>
+    <setting var="contact_mini__description" control_type="text">
+      <value>Работаем с пн-пт в рабочее время (10:00 - 18:00 МСК)</value>
+      <name locale="ru_RU">Подзаголовок блока</name>
+      <name locale="en_US">Block subheader</name>
+    </setting>
+    <setting var="contact_mini__email" control_type="text">
+      <value>mfr-rr@yandex.ru</value>
+      <name locale="ru_RU">Email</name>
+      <name locale="en_US">Email</name>
+    </setting>
+    <setting var="contact_mini__phone" control_type="text">
+      <value>+7 (926) 900-88-12    </value>
+      <name locale="ru_RU">Телефон</name>
+      <name locale="en_US">Phone</name>
+      <description locale="ru_RU">можно несколько, каждый с новой строки</description>
+    </setting>
+    <setting var="contact_mini__address" control_type="text">
+      <value/>
+      <name locale="ru_RU">Адрес</name>
+      <name locale="en_US">Address</name>
+    </setting>
+    <!-- Footer BLOCK -->
+    <setting var="divider_footer" control_type="group_divider">
+      <value/>
+      <name locale="ru_RU">Подвал сайта</name>
+      <name locale="en_US">Site footer</name>
+    </setting>
+    <setting var="footer__copyright" control_type="text">
+      <value>&lt;a href="https://easy-it.ru/" target="_blank"&gt;Доработка сайта Easy IT&lt;/a&gt; </value>
+      <name locale="ru_RU">Copyright 1</name>
+      <name locale="en_US">Copyright 1</name>
+    </setting>
+    <setting var="footer__copyright_right" control_type="text">
+      <value>Мы обрабатываем персональные данные согласно&lt;br&gt;&lt;a href="#"&gt;Политике обработки персональных данных&lt;/a&gt;</value>
+      <name locale="ru_RU">Copyright 2</name>
+      <name locale="en_US">Copyright 2</name>
+    </setting>
+    <setting var="footer__bg" control_type="image">
+      <value>bem/footer/background--custom.jpg?v1618306374</value>
+      <filename>bem/footer/background--custom.*</filename>
+      <name locale="en_US">Background image</name>
+      <name locale="ru_RU">Фон блока</name>
+    </setting>
+  </settings>
+  <thumbs>
+    <thumb>96x96</thumb>
+    <thumb>225x0</thumb>
+    <thumb>96</thumb>
+    <thumb>570</thumb>
+    <thumb>970</thumb>
+  </thumbs>
+  <locales>
+    <locale>
+      <msgid>В корзине пока нет товаров</msgid>
+      <msgstr locale="en_US">Your cart is empty</msgstr>
+    </locale>
+    <locale>
+      <msgid>еще</msgid>
+      <msgstr locale="en_US">more</msgstr>
+    </locale>
+    <locale>
+      <msgid>позиция</msgid>
+      <msgstr locale="en_US">row</msgstr>
+    </locale>
+    <locale>
+      <msgid>позиции</msgid>
+      <msgstr locale="en_US">rows</msgstr>
+    </locale>
+    <locale>
+      <msgid>позиций</msgid>
+      <msgstr locale="en_US">rows</msgstr>
+    </locale>
+    <locale>
+      <msgid>в корзине</msgid>
+      <msgstr locale="en_US">in cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Итого</msgid>
+      <msgstr locale="en_US">Total</msgstr>
+    </locale>
+    <locale>
+      <msgid>изменить</msgid>
+      <msgstr locale="en_US">edit</msgstr>
+    </locale>
+    <locale>
+      <msgid>Неверный купон</msgid>
+      <msgstr locale="en_US">Invalid coupon</msgstr>
+    </locale>
+    <locale>
+      <msgid>Купон</msgid>
+      <msgstr locale="en_US">Coupon</msgstr>
+    </locale>
+    <locale>
+      <msgid>В корзину</msgid>
+      <msgstr locale="en_US">To cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Оплачено бонусами</msgid>
+      <msgstr locale="en_US">Paid by bonuses</msgstr>
+    </locale>
+    <locale>
+      <msgid>Спасибо за Ваш заказ</msgid>
+      <msgstr locale="en_US">Thank you for your order</msgstr>
+    </locale>
+    <locale>
+      <msgid>На главную</msgid>
+      <msgstr locale="en_US">To main page</msgstr>
+    </locale>
+    <locale>
+      <msgid>Шаблон разработан</msgid>
+      <msgstr locale="en_US">Template designed by</msgstr>
+    </locale>
+    <locale>
+      <msgid>Каталог</msgid>
+      <msgstr locale="en_US">Catalog</msgstr>
+    </locale>
+    <locale>
+      <msgid>Доставка</msgid>
+      <msgstr locale="en_US">Delivery</msgstr>
+    </locale>
+    <locale>
+      <msgid>Оплата</msgid>
+      <msgstr locale="en_US">Payment</msgstr>
+    </locale>
+    <locale>
+      <msgid>Отзывы</msgid>
+      <msgstr locale="en_US">Reviews</msgstr>
+    </locale>
+    <locale>
+      <msgid>Контакты</msgid>
+      <msgstr locale="en_US">Contacts</msgstr>
+    </locale>
+    <locale>
+      <msgid>В данном магазине пока нет товаров</msgid>
+      <msgstr locale="en_US">No products in catalog</msgstr>
+    </locale>
+    <locale>
+      <msgid>В данной категории пока нет товаров</msgid>
+      <msgstr locale="en_US">No products in this category</msgstr>
+    </locale>
+    <locale>
+      <msgid>Сортировка</msgid>
+      <msgstr locale="en_US">Sort</msgstr>
+    </locale>
+    <locale>
+      <msgid>с</msgid>
+      <msgstr locale="en_US">from</msgstr>
+    </locale>
+    <locale>
+      <msgid>до</msgid>
+      <msgstr locale="en_US">to</msgstr>
+    </locale>
+    <locale>
+      <msgid>Мы в соц. сетях</msgid>
+      <msgstr locale="en_US">We are in social networks</msgstr>
+    </locale>
+    <locale>
+      <msgid>Написать нам</msgid>
+      <msgstr locale="en_US">Write to us</msgstr>
+    </locale>
+    <locale>
+      <msgid>Ваше Имя</msgid>
+      <msgstr locale="en_US">Your name</msgstr>
+    </locale>
+    <locale>
+      <msgid>Часы работы</msgid>
+      <msgstr locale="en_US">Work hours</msgstr>
+    </locale>
+    <locale>
+      <msgid>Скайп</msgid>
+      <msgstr locale="en_US">Skype</msgstr>
+    </locale>
+    <locale>
+      <msgid>Нажмите для масштабирования</msgid>
+      <msgstr locale="en_US">Click to zoom</msgstr>
+    </locale>
+    <locale>
+      <msgid>Фотографии не найдены</msgid>
+      <msgstr locale="en_US">No photos found</msgstr>
+    </locale>
+    <locale>
+      <msgid>Приложение Фото не установлено</msgid>
+      <msgstr locale="en_US">Application Photo not found</msgstr>
+    </locale>
+    <locale>
+      <msgid>подробнее</msgid>
+      <msgstr locale="en_US">more</msgstr>
+    </locale>
+    <locale>
+      <msgid>Ваш браузер не поддерживает встроенное видео</msgid>
+      <msgstr locale="en_US">Your browser does not support the video tag</msgstr>
+    </locale>
+    <locale>
+      <msgid>Авторизуйтесь, заполнив форму входа, или воспользовавшись перечисленными выше сервисами.</msgid>
+      <msgstr locale="en_US">Login by filling the form, or by using the services.</msgstr>
+    </locale>
+    <locale>
+      <msgid>Кабинет</msgid>
+      <msgstr locale="en_US">My account</msgstr>
+    </locale>
+    <locale>
+      <msgid>Назад к заказам</msgid>
+      <msgstr locale="en_US">Back to orders</msgstr>
+    </locale>
+    <locale>
+      <msgid>Подробнее</msgid>
+      <msgstr locale="en_US">More</msgstr>
+    </locale>
+    <locale>
+      <msgid>Добавить в корзину</msgid>
+      <msgstr locale="en_US">Add to Cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>добавить в корзину</msgid>
+      <msgstr locale="en_US">add to cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>читать отзывы</msgid>
+      <msgstr locale="en_US">read reviews</msgstr>
+    </locale>
+    <locale>
+      <msgid>описание</msgid>
+      <msgstr locale="en_US">description</msgstr>
+    </locale>
+    <locale>
+      <msgid>показать все</msgid>
+      <msgstr locale="en_US">show all</msgstr>
+    </locale>
+    <locale>
+      <msgid>Показать все</msgid>
+      <msgstr locale="en_US">Show all</msgstr>
+    </locale>
+    <locale>
+      <msgid>свернуть</msgid>
+      <msgstr locale="en_US">hide</msgstr>
+    </locale>
+    <locale>
+      <msgid>Оцените</msgid>
+      <msgstr locale="en_US">Rate</msgstr>
+    </locale>
+    <locale>
+      <msgid>Добавление в корзину</msgid>
+      <msgstr locale="en_US">Adding to cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Загрузка...</msgid>
+      <msgstr locale="en_US">Loading...</msgstr>
+    </locale>
+    <locale>
+      <msgid>закрыть</msgid>
+      <msgstr locale="en_US">close</msgstr>
+    </locale>
+    <locale>
+      <msgid>продолжить</msgid>
+      <msgstr locale="en_US">continue</msgstr>
+    </locale>
+    <locale>
+      <msgid>в корзину</msgid>
+      <msgstr locale="en_US">to cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Ошибка добавления</msgid>
+      <msgstr locale="en_US">Error</msgstr>
+    </locale>
+    <locale>
+      <msgid>Продукт добавлен в корзину</msgid>
+      <msgstr locale="en_US">Product added to cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Произошла ошибка, обновите страницу</msgid>
+      <msgstr locale="en_US">Error, please reload the page</msgstr>
+    </locale>
+    <locale>
+      <msgid>Заказ успешно оформлен</msgid>
+      <msgstr locale="en_US">Order successfully registered</msgstr>
+    </locale>
+    <locale>
+      <msgid>Личный кабинет</msgid>
+      <msgstr locale="en_US">Personal Area</msgstr>
+    </locale>
+    <locale>
+      <msgid>Авторизуйтесь, заполнив форму входа, или воспользовавшись перечисленными выше сервисами.</msgid>
+      <msgstr locale="en_US">Log in using the login form, or by using the services listed above.</msgstr>
+    </locale>
+    <locale>
+      <msgid>Заполнена форма контактов на странице</msgid>
+      <msgstr locale="en_US">The form of contacts is filled on the page</msgstr>
+    </locale>
+    <locale>
+      <msgid>Дней</msgid>
+      <msgstr locale="en_US">Days</msgstr>
+    </locale>
+    <locale>
+      <msgid>Часов</msgid>
+      <msgstr locale="en_US">Hours</msgstr>
+    </locale>
+    <locale>
+      <msgid>Минут</msgid>
+      <msgstr locale="en_US">Minutes</msgstr>
+    </locale>
+    <locale>
+      <msgid>Секунд</msgid>
+      <msgstr locale="en_US">Seconds</msgstr>
+    </locale>
+    <locale>
+      <msgid>Заполнена форма</msgid>
+      <msgstr locale="en_US">Filled form</msgstr>
+    </locale>
+    <locale>
+      <msgid>укажите телефон</msgid>
+      <msgstr locale="en_US">specify phone</msgstr>
+    </locale>
+    <locale>
+      <msgid>Примечание</msgid>
+      <msgstr locale="en_US">Note</msgstr>
+    </locale>
+    <locale>
+      <msgid>Вы успешно добавили товар в корзину</msgid>
+      <msgstr locale="en_US">You have successfully added product</msgstr>
+    </locale>
+    <locale>
+      <msgid>продолжить покупки</msgid>
+      <msgstr locale="en_US">continue shopping</msgstr>
+    </locale>
+    <locale>
+      <msgid>перейти в корзину</msgid>
+      <msgstr locale="en_US">go to shopping cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Перейти в корзину</msgid>
+      <msgstr locale="en_US">Go to shopping cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Использовано бонусов</msgid>
+      <msgstr locale="en_US">Using bonuses</msgstr>
+    </locale>
+    <locale>
+      <msgid>бесплатная доставка</msgid>
+      <msgstr locale="en_US">free shipping</msgstr>
+    </locale>
+    <locale>
+      <msgid>скидка</msgid>
+      <msgstr locale="en_US">discount</msgstr>
+    </locale>
+    <locale>
+      <msgid>Изменить</msgid>
+      <msgstr locale="en_US">Edit</msgstr>
+    </locale>
+    <locale>
+      <msgid>Скидка по купону</msgid>
+      <msgstr locale="en_US">Discount on the coupon</msgstr>
+    </locale>
+    <locale>
+      <msgid>Общая скидка</msgid>
+      <msgstr locale="en_US">Total discount</msgstr>
+    </locale>
+    <locale>
+      <msgid>Оплачено бонусами</msgid>
+      <msgstr locale="en_US">Bonus paid</msgstr>
+    </locale>
+    <locale>
+      <msgid>ИТОГО</msgid>
+      <msgstr locale="en_US">TOTAL</msgstr>
+    </locale>
+    <locale>
+      <msgid>Добавляем...</msgid>
+      <msgstr locale="en_US">Adding...</msgstr>
+    </locale>
+    <locale>
+      <msgid>В корзине</msgid>
+      <msgstr locale="en_US">In cart</msgstr>
+    </locale>
+    <locale>
+      <msgid>Купить</msgid>
+      <msgstr locale="en_US">Buy</msgstr>
+    </locale>
+    <locale>
+      <msgid>много</msgid>
+      <msgstr locale="en_US">a lot of</msgstr>
+    </locale>
+    <locale>
+      <msgid>несколько</msgid>
+      <msgstr locale="en_US">several</msgstr>
+    </locale>
+    <locale>
+      <msgid>s</msgid>
+      <msgstr locale="en_US"/>
+    </locale>
+    <locale>
+      <msgid>предзаказ</msgid>
+      <msgstr locale="en_US">Pre-order</msgstr>
+    </locale>
+    <locale>
+      <msgid>нет</msgid>
+      <msgstr locale="en_US">none</msgstr>
+    </locale>
+    <locale>
+      <msgid>в наличие</msgid>
+      <msgstr locale="en_US">In present</msgstr>
+    </locale>
+    <locale>
+      <msgid>Артикул</msgid>
+      <msgstr locale="en_US">Article</msgstr>
+    </locale>
+    <locale>
+      <msgid>Максимальное кол-во</msgid>
+      <msgstr locale="en_US">Maximum number of products</msgstr>
+    </locale>
+    <locale>
+      <msgid>читать отзывы</msgid>
+      <msgstr locale="en_US">read reviews</msgstr>
+    </locale>
+    <locale>
+      <msgid>описание</msgid>
+      <msgstr locale="en_US">description</msgstr>
+    </locale>
+    <locale>
+      <msgid>Заполнена форма подписки на сайте</msgid>
+      <msgstr locale="en_US">The subscription form on the website is completed.</msgstr>
+    </locale>
+    <locale>
+      <msgid>Введите Ваш email ...</msgid>
+      <msgstr locale="en_US">Enter your email ...</msgstr>
+    </locale>
+    <locale>
+      <msgid>Подписка на рассылку со страницы:</msgid>
+      <msgstr locale="en_US">Subscription to the newsletter from the page:</msgstr>
+    </locale>
+    <locale>
+      <msgid>Валюта</msgid>
+      <msgstr locale="en_US">Currency</msgstr>
+    </locale>
+    <locale>
+      <msgid>Для продолжения необходимо Ваше согласие</msgid>
+      <msgstr locale="en_US">To continue we need your consent</msgstr>
+    </locale>
+    <locale>
+      <msgid>Я даю согласие на</msgid>
+      <msgstr locale="en_US">I agree to</msgstr>
+    </locale>
+    <locale>
+      <msgid>я даю согласие на</msgid>
+      <msgstr locale="en_US">i agree to</msgstr>
+    </locale>
+    <locale>
+      <msgid>Нажимая на кнопку</msgid>
+      <msgstr locale="en_US">Press the button</msgstr>
+    </locale>
+    <locale>
+      <msgid>обработку персональных данный</msgid>
+      <msgstr locale="en_US">the processing of personal data</msgstr>
+    </locale>
+    <locale>
+      <msgid>Капча введена неверно. Включите отображение капчи в настройках темы.</msgid>
+      <msgstr locale="en_US">CAPTCHA entered incorrectly. Turn on captcha display in the theme settings.</msgstr>
+    </locale>
+    <locale>
+      <msgid>Ваш браузер не поддерживает встроенное видео</msgid>
+      <msgstr locale="en_US">Your browser does not support embed video</msgstr>
+    </locale>
+    <locale>
+      <msgid>My account</msgid>
+      <msgstr locale="ru_RU">Личный кабинет</msgstr>
+    </locale>
+    <locale>
+      <msgid>Logout</msgid>
+      <msgstr locale="ru_RU">Выход</msgstr>
+    </locale>
+    <locale>
+      <msgid>Catalog</msgid>
+      <msgstr locale="ru_RU">Каталог</msgstr>
+    </locale>
+    <locale>
+      <msgid>Search</msgid>
+      <msgstr locale="ru_RU">Поиск</msgstr>
+    </locale>
+    <locale>
+      <msgid>Log in with your customer password or via the services listed above</msgid>
+      <msgstr locale="ru_RU">Войдите со своим паролем покупателя или воспользуйтесь перечисленными выше
+                сервисами
+            </msgstr>
+    </locale>
+    <locale>
+      <msgid>Connect this account to your accounts in social networks to automatically log in without entering a
+                password
+            </msgid>
+      <msgstr locale="ru_RU">Подключите этот аккаунт к вашим аккаунтам в соцсетях, чтобы входить на сайт
+                автоматически — без ввода пароля
+            </msgstr>
+    </locale>
+    <locale>
+      <msgid>Home</msgid>
+      <msgstr locale="ru_RU">Главная</msgstr>
+    </locale>
+    <locale>
+      <msgid>News</msgid>
+      <msgstr locale="ru_RU">Новости</msgstr>
+    </locale>
+    <locale>
+      <msgid>All news</msgid>
+      <msgstr locale="ru_RU">Все новости</msgstr>
+    </locale>
+    <locale>
+      <msgid>More info</msgid>
+      <msgstr locale="ru_RU">Подробнее</msgstr>
+    </locale>
+    <locale>
+      <msgid>Compare</msgid>
+      <msgstr locale="ru_RU">Сравнение</msgstr>
+    </locale>
+    <locale>
+      <msgid>Empty</msgid>
+      <msgstr locale="ru_RU">Пусто</msgstr>
+    </locale>
+    <locale>
+      <msgid>Place order</msgid>
+      <msgstr locale="ru_RU">Оформить заказ</msgstr>
+    </locale>
+    <locale>
+      <msgid>Search results for</msgid>
+      <msgstr locale="ru_RU">Результаты поиска по запросу</msgstr>
+    </locale>
+    <locale>
+      <msgid>We accept for payment</msgid>
+      <msgstr locale="ru_RU">Мы принимаем к оплате</msgstr>
+    </locale>
+    <locale>
+      <msgid>Сумма</msgid>
+      <msgstr locale="en_US">Total</msgstr>
+    </locale>
+    <locale>
+      <msgid>До конца акции осталось</msgid>
+      <msgstr locale="en_US">Until the end of the action left</msgstr>
+    </locale>
+    <locale>
+      <msgid>Войдите со своим паролем покупателя</msgid>
+      <msgstr locale="en_US">Log in with your customer password</msgstr>
+    </locale>
+  </locales>
+</theme>

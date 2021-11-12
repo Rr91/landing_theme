@@ -1,0 +1,33 @@
+{strip}
+
+    {if !empty($theme_settings.mainslider__bg)}
+        {$bg = "{$wa_theme_url}{$theme_settings.mainslider__bg}"}
+    {/if}
+
+    <div id="mainslider" class="b-mainslider {if !empty($theme_settings.mainslider__dark_text)}b-mainslider--dark{/if}" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+        <div class="container">
+            {include file="./element/menu.html"}
+
+            <div class="b-mainslider__content text-center">
+
+                <div class="mb-5">
+                    <div class="b-mainslider__date mb-4">{eval var=$theme_settings.mainslider__date|replace:'[':'<span class="text-primary">'|replace:']':'</span>'}</div>
+                    <h1 class="b-mainslider__header mb-4">{eval var=$theme_settings.mainslider__header|replace:'[':'<span class="text-primary">'|replace:']':'</span>'}</h1>
+                    <div class="b-mainslider__description">{eval var=$theme_settings.mainslider__description|replace:'[':'<span class="text-primary">'|replace:']':'</span>'}</div>
+                </div>
+
+                {eval var=$theme_settings.mainslider__button assign='button'}
+                {eval var=$theme_settings.mainslider__second_button assign='second_button'}
+
+                {if ((!empty($button)))}
+                    {$button = explode("||", trim($button))}
+                    <a href="{$button[0]|default:''}" class="btn btn-lg btn-secondary mb-3 mx-3 px-5">{if !empty($button[2])}<span class="material-icons">{$button[2]}</span> {/if}{$button[1]|default:''}</a>
+                {/if}
+                {if ((!empty($second_button)))}
+                    {$button = explode("||", trim($second_button))}
+                    <a href="{$button[0]|default:''}" class="btn btn-lg btn-outline-light mb-3 px-5 mx-3">{if !empty($button[2])}<span class="material-icons">{$button[2]}</span> {/if}{$button[1]|default:''}</a>
+                {/if}
+            </div>
+        </div>
+    </div>
+{/strip}

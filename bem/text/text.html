@@ -1,0 +1,19 @@
+{strip}
+{if !empty($theme_settings.text__bg)}
+    {$bg = "{$wa_theme_url}{$theme_settings.text__bg}"}
+{/if}
+
+<div id="text" class="b-theme__block {if !empty($theme_settings.text__dark)}b-theme__block--dark{/if}" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+    <div class="container">
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.text__title}</div>
+
+        {if !empty($theme_settings.reviews__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.text__description}</div>
+        {/if}
+
+        <div  data-aos="fade-right">
+            {eval var=$theme_settings.text__text}
+        </div>
+    </div>
+</div>
+{/strip}

@@ -1,0 +1,93 @@
+{strip}
+{if !empty($theme_settings.speakers__bg)}
+    {$bg = "{$wa_theme_url}{$theme_settings.speakers__bg}"}
+{/if}
+<div id="speakers" class="b-theme__block b-theme__block--dark" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+
+    <div class="container">
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.speakers__title}</div>
+        {if !empty($theme_settings.speakers__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.speakers__description}</div>
+        {/if}
+
+        <div class="row">
+            {$items = []}
+
+            {for $i=1 to 6}
+
+                {$image = "speakers__image_`$i`"}
+                {$fio = "speakers__fio_`$i`"}
+                {$sign = "speakers__work_`$i`"}
+                {$sign = "speakers__work_`$i`"}
+
+                {eval var = $theme_settings["speakers__image_`$i`"] assign='image'}
+                {eval var = $theme_settings["speakers__fio_`$i`"] assign='fio'}
+                {eval var = $theme_settings["speakers__work_`$i`"] assign='work'}
+                {eval var = $theme_settings["speakers__detail_`$i`"] assign='detail'}
+
+                {if (!empty($fio)) || (!empty($work))}
+                    {$items[] = ['image'=>$image,'fio'=>$fio,'work'=>$work,'detail'=>$detail]}
+                {/if}
+            {/for}
+
+            {$count = count($items)}
+
+            {$col_class = 6}
+
+            {if ($count == 3) || ($count == 6)}
+                {$col_class = 4}
+            {/if}
+
+            {foreach $items as $item}
+
+                <div class="col-12 col-md-6 col-lg-{$col_class}" data-aos="fade-left">
+                    <div class="shadow-sm b-speakers__item">
+                        {if !empty($item.image)}
+                            <img class="img-fluid" src="{$wa_theme_url}{$item.image}" alt="{$item.fio|escape}">
+                        {/if}
+
+                        <div class="my-3 h5 text-primary">{$item.fio}</div>
+                        <div class="my-3 text-dark">{$item.work}</div>
+
+                        {if !empty($item.detail)}
+                            <button class="mt-4 btn btn-primary" data-toggle="modal" data-target="#speakers__detail_{$item@iteration}">Подробнее</button>
+                        {/if}
+                    </div>
+                </div>
+
+                <div class="modal  fade" id="speakers__detail_{$item@iteration}" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg text-dark" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <div class="d-flex align-items-center">
+                                    {if !empty($item.image)}
+                                        <img class="b-speakers__logo mr-4" src="{$wa_theme_url}{$item.image}" alt="{$item.fio|escape}">
+                                    {/if}
+
+                                    <div class="div">
+                                        <div class="mb-2 h5 text-primary">{$item.fio}</div>
+                                        <div class="text-dark">{$item.work}</div>
+                                    </div>
+
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+                            </div>
+                            <div class="modal-body">
+                                <div class="">{$item.detail}</div>
+                                <div class="text-center mt-4">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {/foreach}
+        </div>
+    </div>
+</div>
+{/strip}

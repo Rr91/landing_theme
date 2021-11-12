@@ -1,0 +1,35 @@
+{strip}
+    <div class="row align-items-center py-5 flex-md-nowrap">
+
+        <div class="col-12 col-md-auto mb-3 mb-md-0 text-center text-md-left">
+            {if !empty($theme_settings.mainslider__logo_link)}<a href="{eval var=$theme_settings.mainslider__logo_link|escape}">{/if}
+                {if !empty($theme_settings.mainslider__logo)}
+                    <img class="b-mainslider__logo img-fluid" src="{$wa_theme_url}{$theme_settings.mainslider__logo}" alt="{$wa->accountName()|escape}">
+                {else}
+                    <span class="b-mainslider__logo_text">{eval var=$theme_settings.mainslider__name}</span>
+                {/if}
+            {if !empty($theme_settings.mainslider__logo_link)}</a>{/if}
+        </div>
+
+        <div class="col-12 col-md text-center text-md-right">
+
+            {eval var=$theme_settings.mainslider__links assign="links"}
+            {if !empty($links)}
+                {$top__mainslider = explode("\n", $links)}
+                {foreach $top__mainslider as $mainslider__link}
+                    {$mainslider__link = $mainslider__link|trim}
+                    {if empty($mainslider__link)}{continue}{/if}
+                    {$a_mainslider__link = explode("||", $mainslider__link)}
+                    {if !empty($a_mainslider__link[2]) && strpos('open-popup', $a_mainslider__link[2])!==false}
+                        {$ext_class = 'open-popup'}
+                    {else}
+                        {$ext_class = ''}
+                    {/if}
+                    <a href="{$a_mainslider__link[0]|default:''|regex_replace:'/^#/':"`$wa_app_url`#"}" class="b-mainslider__link {$ext_class}">
+                        {if !empty($a_mainslider__link[2])}<i class="{$a_mainslider__link[2]|default:''}"></i> {/if}{$a_mainslider__link[1]|default:''}
+                    </a>
+                {/foreach}
+            {/if}
+        </div>
+    </div>
+{/strip}

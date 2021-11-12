@@ -1,0 +1,14 @@
+{eval var=$theme_settings.theme__blocks assign='blocks'}
+{$blocks = explode(',', $blocks)}
+
+{foreach $blocks as $block}
+    {$block=$block|trim}
+
+    {if !empty($block)}
+        {if substr($block, 0, 6) == 'block_'}
+            {$wa->block(substr($block, 6))}
+        {else}
+            {include file="bem/`$block`/`$block`.html"}
+        {/if}
+    {/if}
+{/foreach}

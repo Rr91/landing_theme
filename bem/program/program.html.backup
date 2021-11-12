@@ -1,0 +1,44 @@
+{strip}
+
+    {if !empty($theme_settings.program__bg)}
+        {$bg = "{$wa_theme_url}{$theme_settings.program__bg}"}
+    {/if}
+    <div id="program" class="b-theme__block b-theme__block--dark" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+        <div class="container">
+            <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.program__title}</div>
+            {if !empty($theme_settings.program__description)}
+                <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.program__description}</div>
+            {/if}
+
+            <div class="mt-5 pt-5">
+                {for $i=1 to 9}
+
+                    {$time_name  = "program__time_`$i`"}
+                    {$title_name = "program__header_`$i`"}
+                    {$text_name  = "program__text_`$i`"}
+
+                    {eval var=$theme_settings.$time_name assign='time'}
+                    {eval var=$theme_settings.$title_name assign='title'}
+                    {eval var=$theme_settings.$text_name assign='text'}
+
+                    {if ((!empty($title))||(!empty($time))||(!empty($text)))}
+                        <div class="row align-items-center" data-aos="fade-{if $i@iteration is even}left{else}right{/if}">
+                            <div class="col-3 col-md-2 text-md-right mb-4 mb-md-5">
+                                <div class="b-program__number">0{$i}</div>
+                            </div>
+                            <div class="col-9 col-md-3 text-md-center mb-4 mb-md-5">
+                                {$time}
+                            </div>
+                            <div class="col-12 col-md-7 mb-5">
+                                {if !empty($title)}
+                                    <div class="h5">{$title}</div>
+                                {/if}
+                                <div class="small">{$text}</div>
+                            </div>
+                        </div>
+                    {/if}
+                {/for}
+            </div>
+        </div>
+    </div>
+{/strip}

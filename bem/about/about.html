@@ -1,0 +1,30 @@
+{strip}
+<div id="about" class="b-theme__block container">
+    <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.about__title}</div>
+    {if !empty($theme_settings.about__description)}
+        <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.about__description}</div>
+    {/if}
+
+    <div class="row pt-md-5 text-center">
+        {for $i=1 to 4}
+            {$icon_name  = "about__icon_`$i`"}
+            {$title_name = "about__title_`$i`"}
+            {$text_name  = "about__text_`$i`"}
+
+            {eval var=$theme_settings.$icon_name assign='icon'}
+            {eval var=$theme_settings.$title_name assign='title'}
+            {eval var=$theme_settings.$text_name  assign='text'}
+
+            {if ((!empty($title))||(!empty($text))||(!empty($icon)))}
+
+                <div class="col-12 col-md-6 col-lg mb-5" data-aos="fade-right">
+                    {if !empty($icon)}<div class="mb-3 mb-md-4"><div class="b-about__icon"><span class="material-icons">{$icon}</span></div></div>{/if}
+                    {if !empty($title)}<div class="h4 text-dark">{$title}</div>{/if}
+                    {if !empty($text)}<div>{$text}</div>{/if}
+                </div>
+            {/if}
+
+        {/for}
+    </div>
+</div>
+{/strip}

@@ -1,0 +1,12 @@
+{strip}
+
+    {if !empty($theme_settings.mainslider__bg)}
+        {$bg = "{$wa_theme_url}{$theme_settings.mainslider__bg}"}
+    {/if}
+
+    <div id="mainslider" class="b-mainslider b-mainslider--mini {if !empty($theme_settings.mainslider__dark_text)}b-mainslider--dark{/if}" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+        <div class="container">
+            {include file="./element/menu--mini.html"}
+        </div>
+    </div>
+{/strip}

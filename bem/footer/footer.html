@@ -1,0 +1,30 @@
+{strip}
+    {if !empty($theme_settings.footer__bg)}
+        {$bg = "{$wa_theme_url}{$theme_settings.footer__bg}"}
+    {/if}
+    <footer id="footer" class="b-footer b-theme__block b-theme__block--dark pb-5" {if (!empty($bg))}style="background-image:url('{$bg|escape}');"{/if}>
+        <div class="container text-center">
+            <div class="mb-5">
+                {if !empty($theme_settings.mainslider__logo_link)}
+                    <a href="{eval var=$theme_settings.mainslider__logo_link|escape}">
+                {/if}
+                {if !empty($theme_settings.mainslider__logo)}
+                    <img class="b-mainslider__logo img-fluid" src="{$wa_theme_url}{$theme_settings.mainslider__logo}" alt="{$wa->accountName()|escape}">
+                {else}
+                    <span class="b-mainslider__logo_text">{eval var=$theme_settings.mainslider__name}</span>
+                {/if}
+                {if !empty($theme_settings.mainslider__logo_link)}</a>{/if}
+            </div>
+
+            <div class="small mb-3">
+                {eval var=$theme_settings.footer__copyright_right}
+            </div>
+
+            <div class="small">
+                {eval var=$theme_settings.footer__copyright}
+            </div>
+
+            <a href="#top" class="b-footer__scroll i-footer__scroll"><span class="material-icons">keyboard_arrow_up</span></a>
+        </div>
+    </footer>
+{/strip}

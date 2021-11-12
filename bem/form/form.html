@@ -1,0 +1,106 @@
+{strip}
+    {$show_label=true}
+
+    <div id="form" class="b-theme__block container">
+
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.form__title}</div>
+
+        {if !empty($theme_settings.form__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.form__description}</div>
+        {/if}
+
+        <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3" data-aos="flip-left">
+
+            {$errors = array()}
+
+            {if empty($theme_settings.form__form_captcha)}
+                {$wa->storage(['captcha', $wa->app()], '')}
+            {/if}
+
+            {$top__antispam = $wa->post('message')}
+            {if ($wa->post("top__send")) && (empty($top__antispam)) && ($wa->sendEmail("", $errors))}
+                <div class="h3 text-center text-primary">[s`Thank you!`]</div>
+                <br>
+                <br>
+                <p class="text-center">{eval var=$theme_settings.form__form_success}</p>
+            {else}
+                {if !empty($errors.all)}
+                    <div class="alert alert-error">{$errors.all}</div>
+                {/if}
+                <form method="post" action="#form">
+                    <input type="hidden" name="subject" value="[`Заполнена форма`] {eval var=$theme_settings.form__title|escape} [`на странице`] {$wa->currentUrl(true)|escape}">
+
+                    {if !empty($theme_settings.form__form_name)}
+                        <div class="form-group">
+                            {$cur_error = (!empty($errors.name))?"<span class='text-danger'> - `$errors.name`</span>":''}
+                            {if $show_label}
+                                <label for="form__name">[`Ваше Имя`] {$cur_error|lower}</label>
+                            {elseif (!empty($cur_error))}
+                                <label for="form__name">{$cur_error|lower}</label>
+                            {/if}
+                            <input type="text" name="name" id="form__name" class="form-control {if !empty($errors.name)}is-invalid{/if}" {if !$show_label}placeholder="[`Ваше Имя`]"{/if} value="{if $wa->post("top__send")}{$wa->post("name")|escape}{/if}">
+                        </div>
+                    {/if}
+
+                    {if !empty($theme_settings.form__form_email)}
+                        <div class="form-group">
+                            {$cur_error = (!empty($errors.email))?"<span class='text-danger'> - `$errors.email`</span>":''}
+                            {if $show_label}
+                                <label for="form__email">[s`Email`] * {$cur_error|lower}</label>
+                            {elseif (!empty($cur_error))}
+                                <label for="form__email">{$cur_error|lower}</label>
+                            {/if}
+                            <input type="email" id="form__email" name="email" class="form-control {if !empty($errors.email)}is-invalid{/if}" {if !$show_label}placeholder="[s`Email`] *"{/if} value="{if $wa->post("top__send")}{$wa->post("email")|escape}{/if}" required>
+                        </div>
+                    {else}
+                        <input type="hidden" name="email" value="empty@pisem.net">
+                    {/if}
+
+                    <div class="form-group hidden">
+                        {$cur_error = (!empty($errors.body)) ? "<span class='text-danger'> - `$errors.body`</span>":''}
+                        {if $show_label}
+                            <label for="form__message">[s`Subject`] * {$cur_error|lower}</label>
+                        {elseif (!empty($cur_error))}
+                            <label for="form__message">{$cur_error|lower}</label>
+                        {/if}
+                        <input type="text" id="form__message" name="message" class="form-control" {if !$show_label}placeholder="[s`Subject`] *"{/if}>
+                    </div>
+
+
+                    {if !empty($theme_settings.form__form_phone)}
+                        <div class="form-group ">
+                            {$cur_error = (!empty($errors.body)) ? "<span class='text-danger'> - [`укажите телефон`]</span>":''}
+                            {if $show_label}
+                                <label for="form__body">[s`Phone`] * {$cur_error|lower}</label>
+                            {elseif (!empty($cur_error))}
+                                <label for="form__body">{$cur_error|lower}</label>
+                            {/if}
+                            <input type="text" id="form__body" name="body" class="form-control {if !empty($errors.body)}is-invalid{/if}" {if !$show_label}placeholder="[s`Phone`] *"{/if} value="{if $wa->post("top__send")}{$wa->post("body")|escape}{/if}" required>
+                        </div>
+                    {else}
+                        <input type="hidden" name="body" value="&nbsp;">
+                    {/if}
+
+                    {if !empty($theme_settings.form__form_captcha)}
+                        <div class="form-group">
+                            {$wa->captcha(!empty($errors.captcha))}
+                            {if !empty($errors.captcha)}<div class="wa-error-msg text-danger">{$errors.captcha}</div>{/if}
+                        </div>
+                    {else}
+                        {if !empty($errors.captcha)}
+                            <div class="form-group">
+                                <div class="wa-error-msg text-danger">[`Капча введена неверно. Включите отображение капчи в настройках темы.`]</div>
+                            </div>
+                        {/if}
+                    {/if}
+
+                    <div class="form-group last mt-4">
+                        <input type="submit" name="top__send" value="{eval var=$theme_settings.form__form_submit|escape}" class="btn btn-block btn-lg btn-primary">
+                    </div>
+
+                    <div class="b-form__form_sign text-center small">{eval var=$theme_settings.form__form_sign}</div>
+                </form>
+            {/if}
+        </div>
+    </div>
+{/strip}

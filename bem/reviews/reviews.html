@@ -1,0 +1,29 @@
+{strip}
+    <div id="reviews" class="b-reviews b-theme__block container">
+
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.reviews__title}</div>
+
+        {if !empty($theme_settings.reviews__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.reviews__description}</div>
+        {/if}
+
+        {foreach $posts as $post}
+            <div class="row mb-5" data-aos="fade-{if $i@iteration is even}left{else}right{/if}">
+                <div class="col-auto b-reviews__image_block">
+                    {if !empty($post.image)}
+                        <img class="img-fluid" src="{$post.image}">
+                    {/if}
+                </div>
+                <div class="col">
+                    {if (!empty($post.title))}
+                        <div class="h5 text-dark">{$post.title}</div>
+                    {/if}
+                    {if (!empty($post.anons))}
+                        <div class="h5 text-dark">{$post.anons}</div>
+                    {/if}
+                    <div>{$post.text}</div>
+                </div>
+            </div>
+        {/foreach}
+    </div>
+{/strip}

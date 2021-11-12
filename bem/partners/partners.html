@@ -1,0 +1,28 @@
+{strip}
+    <div id="partners" class="b-partners b-theme__block container">
+
+        <div class="h2 b-theme__header" data-aos="fade-up">{eval var=$theme_settings.partners__title}</div>
+
+        {if !empty($theme_settings.reviews__description)}
+            <div class="text-center mb-5 mt-n3" data-aos="fade-up">{eval var=$theme_settings.partners__description}</div>
+        {/if}
+
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+
+        {$wow_index = 0}
+        {for $i=1 to 20}
+
+            {eval var=$theme_settings["partners__image_`$i`"] assign='image'}
+            {eval var=$theme_settings["partners__alt_`$i`"] assign='alt'}
+            {eval var=$theme_settings["partners__link_`$i`"] assign='link'}
+
+            {if (!empty($image))}
+                {if !empty($link)}<a href="{$link|escape}" target="_blank" rel="nofollow">{/if}
+                <img class="b-partners__image" alt="{$alt|escape}" src="{$wa_theme_url}{$image}" data-aos="fade" data-aos-delay="{$wow_index}">
+                {$wow_index = $wow_index + 200}
+                {if !empty($link)}</a>{/if}
+            {/if}
+        {/for}
+        </div>
+    </div>
+{/strip}
